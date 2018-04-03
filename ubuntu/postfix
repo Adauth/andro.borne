@@ -1,0 +1,9 @@
+sudo apt-get install postfix
+Site Internet [x] (sudo dpkg-reconfigure postfix)
+sudo vi /etc/postfix/main.cf
+Supprimer mydestination = $myhostname
+inet_interfaces = loopback-only
+sudo service postfix restart
+
+Pour envoyer un mail :
+echo "CorpsDuMail" | mail -s "Objet" -A fichier.image adresse@mail.fr
